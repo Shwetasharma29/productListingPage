@@ -40,7 +40,9 @@ const ProductListingPage = () => {
     color: red;
     margin-top: 5px;
   `;
-
+const Dropdown = styled. div`
+display: flex;
+gap:2%;`;
   const getcategory = (data) => {
 
     let categoryWiseProduct={}
@@ -110,6 +112,7 @@ if(!categoryWiseProduct[data[i].category]){
             <h1>Product Listing Page</h1>
              
              {/* choose category */}
+             <Dropdown>
              <select value={selectedOption} onChange={handleOptionChange}>
                 <option value="All">All Category</option>
              {Object.entries(getcategories).map(([category]) => (
@@ -128,7 +131,7 @@ if(!categoryWiseProduct[data[i].category]){
                 <option value="discountPercentage1"> discount(Low to high)</option>
                 <option value="discountPercentage2"> discount(high to low)</option>
              </select>
-
+             </Dropdown>
 
 
             <ProductContainer>
